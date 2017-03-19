@@ -88,4 +88,9 @@ defmodule Bouncer.Session do
       has_current_user && conn.private.current_user["id"] == id
     end
   end
+
+  def is_valid(conn) do
+    Map.has_key?(conn.private, :current_user) &&
+    Map.has_key?(conn.private.current_user, "id")
+  end
 end
