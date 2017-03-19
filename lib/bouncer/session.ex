@@ -13,7 +13,7 @@ defmodule Bouncer.Session do
   Generates a session token. The ttl (time-to-live) defaults to 2 weeks.
   See Bouncer.Token.Generate/4.
   """
-  def generate(conn, user, ttl \\ 1_210_000) do
+  def generate(conn, user, ttl) do
     Token.generate(conn, "user", user, ttl)
   end
 
@@ -27,7 +27,7 @@ defmodule Bouncer.Session do
   @doc """
   Saves session data given a key and optional ttl (time-to-live).
   """
-  def save(data, key, ttl), do: adapter.save(data, key, ttl)
+  def save(data, key, ttl), do: adapter().save(data, key, ttl)
 
   @doc """
   Retrieves session data given an authorization token and puts it into the
