@@ -43,7 +43,7 @@ defmodule Bouncer.Mixfile do
   defp deps do
     [
       {:plug, ">= 1.0.3"},
-      {:phoenix, "~> 1.3.0"},
+      {:phoenix, "~> 1.3.0-rc"},
       {:poison, "~> 2.0 or ~> 2.2"},
       {:redix, ">= 0.0.0"},
       {:poolboy, "~> 1.4"},
