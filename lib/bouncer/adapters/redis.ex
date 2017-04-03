@@ -127,4 +127,18 @@ defmodule Bouncer.Adapters.Redis do
       _ -> {:ok, key}
     end
   end
+  
+  @doc """
+  Deletes all key's from Redis.
+
+  ## Examples
+      iex> Bouncer.Adapters.Redis.deleteAll "UdOnTkNoW"
+      {:ok, "::: redis is clean :::"
+  """
+  def deleteAll() do
+    case RedixPool.command(~w(FLUSHALL)) do
+      {:ok, 0} -> {:error, "redis can't be clean :("}
+      _ -> {:ok, "::: redis is clean :::"}
+    end
+  end
 end
