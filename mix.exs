@@ -44,7 +44,7 @@ defmodule Bouncer.Mixfile do
     [      
       {:plug, ">= 1.0.3"},
       {:phoenix, ">= 1.2.1"},
-      {:poison, "~> 1.5 or ~> 2.0"},
+      {:poison, "~> 3.1.0"},
       {:redix, ">= 0.0.0"},
       {:poolboy, "~> 1.4"},
       {:earmark, "~> 0.1", only: :dev},
